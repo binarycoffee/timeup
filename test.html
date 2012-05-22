@@ -1,0 +1,28 @@
+<html>
+	<head>
+		<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+		<script type="text/javascript" src="js/jquery.timeup-0.0.1.js"></script>
+	</head>
+<body>
+	<input type="text" id="stopwatch1" />
+
+	<input type="button" value="start()" id="stopwatch1_start" />
+	<input type="button" value="stop()" id="stopwatch1_stop" />
+
+
+	<script type="text/javascript">
+		$(document).ready(function() 
+		{
+			$("#stopwatch1_start").click(function()
+			{
+				$("#stopwatch1").timeup('start');
+			});
+			$("#stopwatch1_stop").click(function()
+			{
+				$("#stopwatch1").timeup('stop');
+			});
+		});
+	</script>
+</body>
+
+</html>
