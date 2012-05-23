@@ -4,25 +4,54 @@
 		<script type="text/javascript" src="js/jquery.timeup-0.0.1.js"></script>
 	</head>
 <body>
-	<input type="text" id="stopwatch1" />
+	<div>
+		<input type="text" id="stopwatch1" sw="sw1" />
+		
+		<input type="button" value="start()" id="stopwatch1_start" />
+		<input type="button" value="stop()" id="stopwatch1_stop" />
+		<input type="button" value="reset()" id="stopwatch1_reset" />
+	</div>
+	<div>
+		<span id="stopwatch2" sw="sw2">0:0:0</span>
 
-	<input type="button" value="start()" id="stopwatch1_start" />
-	<input type="button" value="stop()" id="stopwatch1_stop" />
-
-
+		<input type="button" value="start()" id="stopwatch2_start" />
+		<input type="button" value="stop()" id="stopwatch2_stop" />
+		<input type="button" value="reset()" id="stopwatch2_reset" />
+	</div>
 	<script type="text/javascript">
 		$(document).ready(function() 
 		{
+			// STOPWATCH 1 <input>
 			$("#stopwatch1_start").click(function()
 			{
-				$("#stopwatch1").timeup('start');
+				$("#stopwatch1").timeup('start','sw');
 			});
 			$("#stopwatch1_stop").click(function()
 			{
-				$("#stopwatch1").timeup('stop');
+				$("#stopwatch1").timeup('stop','sw');
+			});
+			$("#stopwatch1_reset").click(function()
+			{
+				$("#stopwatch1").timeup('reset','sw');
+			});
+			
+			// STOPWATCH 2 <non-input>
+			$("#stopwatch2_start").click(function()
+			{
+				$("#stopwatch2").timeup('start','sw');
+			});
+			$("#stopwatch2_stop").click(function()
+			{
+				$("#stopwatch2").timeup('stop','sw');
+			});
+			$("#stopwatch2_reset").click(function()
+			{
+				$("#stopwatch2").timeup('reset','sw');
 			});
 		});
 	</script>
+
+
 </body>
 
 </html>
